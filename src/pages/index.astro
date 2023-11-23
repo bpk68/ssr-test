@@ -4,9 +4,6 @@ import Card from '../components/Card.astro';
 
 import { GET } from './api/messages.ts';
 
-let response = await GET(Astro);
-const data = await response.json();
-
 const fetchResponse = await fetch(Astro.url + '/api/messages');
 const fetchData = await fetchResponse.json();
 ---
@@ -42,7 +39,6 @@ const fetchData = await fetchResponse.json();
       </defs>
     </svg>
     <h1>Welcome to <span class="text-gradient">the jungle</span></h1>
-    <h2>Message from GET import API is "{data.message}"</h2>
     <h2>Message from fetch-ed API is "{fetchData.message}"</h2>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
